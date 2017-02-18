@@ -1,0 +1,491 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5816932D1E56D38300303990 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5816932C1E56D38300303990 /* main.m */; };
+		581693301E56D38300303990 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5816932F1E56D38300303990 /* AppDelegate.m */; };
+		581693331E56D38300303990 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 581693321E56D38300303990 /* ViewController.m */; };
+		581693361E56D38300303990 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 581693341E56D38300303990 /* Main.storyboard */; };
+		581693381E56D38300303990 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 581693371E56D38300303990 /* Assets.xcassets */; };
+		5816933B1E56D38300303990 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 581693391E56D38300303990 /* LaunchScreen.storyboard */; };
+		581693461E56D38300303990 /* MSMethodTimeTrackerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 581693451E56D38300303990 /* MSMethodTimeTrackerTests.m */; };
+		581693601E56D3B600303990 /* NSObject+MethodTimeTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 581693531E56D3B600303990 /* NSObject+MethodTimeTracker.m */; };
+		581693611E56D3B600303990 /* NSInvocation+SwizzleHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 581693571E56D3B600303990 /* NSInvocation+SwizzleHelper.m */; };
+		581693621E56D3B600303990 /* NSNull+WasNil.m in Sources */ = {isa = PBXBuildFile; fileRef = 581693591E56D3B600303990 /* NSNull+WasNil.m */; };
+		581693631E56D3B600303990 /* NSObject+SwizzleMethodPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5816935B1E56D3B600303990 /* NSObject+SwizzleMethodPrivate.m */; };
+		581693641E56D3B600303990 /* NSObject+SwizzleMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 5816935D1E56D3B600303990 /* NSObject+SwizzleMethods.m */; };
+		581693651E56D3B600303990 /* MSOriginImpContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5816935F1E56D3B600303990 /* MSOriginImpContainer.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		581693421E56D38300303990 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 581693201E56D38300303990 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 581693271E56D38300303990;
+			remoteInfo = MSMethodTimeTracker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		581693281E56D38300303990 /* MSMethodTimeTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MSMethodTimeTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5816932C1E56D38300303990 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5816932E1E56D38300303990 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5816932F1E56D38300303990 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		581693311E56D38300303990 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		581693321E56D38300303990 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		581693351E56D38300303990 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		581693371E56D38300303990 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5816933A1E56D38300303990 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5816933C1E56D38300303990 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		581693411E56D38300303990 /* MSMethodTimeTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MSMethodTimeTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		581693451E56D38300303990 /* MSMethodTimeTrackerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSMethodTimeTrackerTests.m; sourceTree = "<group>"; };
+		581693471E56D38300303990 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		581693521E56D3B600303990 /* NSObject+MethodTimeTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MethodTimeTracker.h"; sourceTree = "<group>"; };
+		581693531E56D3B600303990 /* NSObject+MethodTimeTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MethodTimeTracker.m"; sourceTree = "<group>"; };
+		581693551E56D3B600303990 /* MSSwizzleMethodStatics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSwizzleMethodStatics.h; sourceTree = "<group>"; };
+		581693561E56D3B600303990 /* NSInvocation+SwizzleHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+SwizzleHelper.h"; sourceTree = "<group>"; };
+		581693571E56D3B600303990 /* NSInvocation+SwizzleHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+SwizzleHelper.m"; sourceTree = "<group>"; };
+		581693581E56D3B600303990 /* NSNull+WasNil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNull+WasNil.h"; sourceTree = "<group>"; };
+		581693591E56D3B600303990 /* NSNull+WasNil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNull+WasNil.m"; sourceTree = "<group>"; };
+		5816935A1E56D3B600303990 /* NSObject+SwizzleMethodPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SwizzleMethodPrivate.h"; sourceTree = "<group>"; };
+		5816935B1E56D3B600303990 /* NSObject+SwizzleMethodPrivate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SwizzleMethodPrivate.m"; sourceTree = "<group>"; };
+		5816935C1E56D3B600303990 /* NSObject+SwizzleMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SwizzleMethods.h"; sourceTree = "<group>"; };
+		5816935D1E56D3B600303990 /* NSObject+SwizzleMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SwizzleMethods.m"; sourceTree = "<group>"; };
+		5816935E1E56D3B600303990 /* MSOriginImpContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSOriginImpContainer.h; sourceTree = "<group>"; };
+		5816935F1E56D3B600303990 /* MSOriginImpContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSOriginImpContainer.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		581693251E56D38300303990 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5816933E1E56D38300303990 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5816931F1E56D38300303990 = {
+			isa = PBXGroup;
+			children = (
+				5816932A1E56D38300303990 /* MSMethodTimeTracker */,
+				581693441E56D38300303990 /* MSMethodTimeTrackerTests */,
+				581693291E56D38300303990 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		581693291E56D38300303990 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				581693281E56D38300303990 /* MSMethodTimeTracker.app */,
+				581693411E56D38300303990 /* MSMethodTimeTrackerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5816932A1E56D38300303990 /* MSMethodTimeTracker */ = {
+			isa = PBXGroup;
+			children = (
+				581693511E56D3B100303990 /* MethodTimeTracker */,
+				5816932E1E56D38300303990 /* AppDelegate.h */,
+				5816932F1E56D38300303990 /* AppDelegate.m */,
+				581693311E56D38300303990 /* ViewController.h */,
+				581693321E56D38300303990 /* ViewController.m */,
+				581693501E56D38B00303990 /* Resoureces */,
+				5816932B1E56D38300303990 /* Supporting Files */,
+			);
+			path = MSMethodTimeTracker;
+			sourceTree = "<group>";
+		};
+		5816932B1E56D38300303990 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5816932C1E56D38300303990 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		581693441E56D38300303990 /* MSMethodTimeTrackerTests */ = {
+			isa = PBXGroup;
+			children = (
+				581693451E56D38300303990 /* MSMethodTimeTrackerTests.m */,
+				581693471E56D38300303990 /* Info.plist */,
+			);
+			path = MSMethodTimeTrackerTests;
+			sourceTree = "<group>";
+		};
+		581693501E56D38B00303990 /* Resoureces */ = {
+			isa = PBXGroup;
+			children = (
+				581693341E56D38300303990 /* Main.storyboard */,
+				581693371E56D38300303990 /* Assets.xcassets */,
+				581693391E56D38300303990 /* LaunchScreen.storyboard */,
+				5816933C1E56D38300303990 /* Info.plist */,
+			);
+			name = Resoureces;
+			sourceTree = "<group>";
+		};
+		581693511E56D3B100303990 /* MethodTimeTracker */ = {
+			isa = PBXGroup;
+			children = (
+				581693541E56D3B600303990 /* SwizzleMethod */,
+				581693521E56D3B600303990 /* NSObject+MethodTimeTracker.h */,
+				581693531E56D3B600303990 /* NSObject+MethodTimeTracker.m */,
+			);
+			name = MethodTimeTracker;
+			sourceTree = "<group>";
+		};
+		581693541E56D3B600303990 /* SwizzleMethod */ = {
+			isa = PBXGroup;
+			children = (
+				581693551E56D3B600303990 /* MSSwizzleMethodStatics.h */,
+				581693561E56D3B600303990 /* NSInvocation+SwizzleHelper.h */,
+				581693571E56D3B600303990 /* NSInvocation+SwizzleHelper.m */,
+				581693581E56D3B600303990 /* NSNull+WasNil.h */,
+				581693591E56D3B600303990 /* NSNull+WasNil.m */,
+				5816935A1E56D3B600303990 /* NSObject+SwizzleMethodPrivate.h */,
+				5816935B1E56D3B600303990 /* NSObject+SwizzleMethodPrivate.m */,
+				5816935C1E56D3B600303990 /* NSObject+SwizzleMethods.h */,
+				5816935D1E56D3B600303990 /* NSObject+SwizzleMethods.m */,
+				5816935E1E56D3B600303990 /* MSOriginImpContainer.h */,
+				5816935F1E56D3B600303990 /* MSOriginImpContainer.m */,
+			);
+			path = SwizzleMethod;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		581693271E56D38300303990 /* MSMethodTimeTracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5816934A1E56D38300303990 /* Build configuration list for PBXNativeTarget "MSMethodTimeTracker" */;
+			buildPhases = (
+				581693241E56D38300303990 /* Sources */,
+				581693251E56D38300303990 /* Frameworks */,
+				581693261E56D38300303990 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MSMethodTimeTracker;
+			productName = MSMethodTimeTracker;
+			productReference = 581693281E56D38300303990 /* MSMethodTimeTracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		581693401E56D38300303990 /* MSMethodTimeTrackerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5816934D1E56D38300303990 /* Build configuration list for PBXNativeTarget "MSMethodTimeTrackerTests" */;
+			buildPhases = (
+				5816933D1E56D38300303990 /* Sources */,
+				5816933E1E56D38300303990 /* Frameworks */,
+				5816933F1E56D38300303990 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				581693431E56D38300303990 /* PBXTargetDependency */,
+			);
+			name = MSMethodTimeTrackerTests;
+			productName = MSMethodTimeTrackerTests;
+			productReference = 581693411E56D38300303990 /* MSMethodTimeTrackerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		581693201E56D38300303990 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = MS;
+				TargetAttributes = {
+					581693271E56D38300303990 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+					581693401E56D38300303990 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 581693271E56D38300303990;
+					};
+				};
+			};
+			buildConfigurationList = 581693231E56D38300303990 /* Build configuration list for PBXProject "MSMethodTimeTracker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5816931F1E56D38300303990;
+			productRefGroup = 581693291E56D38300303990 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				581693271E56D38300303990 /* MSMethodTimeTracker */,
+				581693401E56D38300303990 /* MSMethodTimeTrackerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		581693261E56D38300303990 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5816933B1E56D38300303990 /* LaunchScreen.storyboard in Resources */,
+				581693381E56D38300303990 /* Assets.xcassets in Resources */,
+				581693361E56D38300303990 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5816933F1E56D38300303990 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		581693241E56D38300303990 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				581693651E56D3B600303990 /* MSOriginImpContainer.m in Sources */,
+				581693331E56D38300303990 /* ViewController.m in Sources */,
+				581693621E56D3B600303990 /* NSNull+WasNil.m in Sources */,
+				581693301E56D38300303990 /* AppDelegate.m in Sources */,
+				581693641E56D3B600303990 /* NSObject+SwizzleMethods.m in Sources */,
+				581693601E56D3B600303990 /* NSObject+MethodTimeTracker.m in Sources */,
+				5816932D1E56D38300303990 /* main.m in Sources */,
+				581693611E56D3B600303990 /* NSInvocation+SwizzleHelper.m in Sources */,
+				581693631E56D3B600303990 /* NSObject+SwizzleMethodPrivate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5816933D1E56D38300303990 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				581693461E56D38300303990 /* MSMethodTimeTrackerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		581693431E56D38300303990 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 581693271E56D38300303990 /* MSMethodTimeTracker */;
+			targetProxy = 581693421E56D38300303990 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		581693341E56D38300303990 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				581693351E56D38300303990 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		581693391E56D38300303990 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5816933A1E56D38300303990 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		581693481E56D38300303990 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		581693491E56D38300303990 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5816934B1E56D38300303990 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MSMethodTimeTracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MS.MSMethodTimeTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5816934C1E56D38300303990 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MSMethodTimeTracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MS.MSMethodTimeTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		5816934E1E56D38300303990 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MSMethodTimeTrackerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MS.MSMethodTimeTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MSMethodTimeTracker.app/MSMethodTimeTracker";
+			};
+			name = Debug;
+		};
+		5816934F1E56D38300303990 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MSMethodTimeTrackerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MS.MSMethodTimeTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MSMethodTimeTracker.app/MSMethodTimeTracker";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		581693231E56D38300303990 /* Build configuration list for PBXProject "MSMethodTimeTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				581693481E56D38300303990 /* Debug */,
+				581693491E56D38300303990 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5816934A1E56D38300303990 /* Build configuration list for PBXNativeTarget "MSMethodTimeTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5816934B1E56D38300303990 /* Debug */,
+				5816934C1E56D38300303990 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5816934D1E56D38300303990 /* Build configuration list for PBXNativeTarget "MSMethodTimeTrackerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5816934E1E56D38300303990 /* Debug */,
+				5816934F1E56D38300303990 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 581693201E56D38300303990 /* Project object */;
+}
