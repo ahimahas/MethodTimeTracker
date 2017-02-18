@@ -32,8 +32,6 @@ If you want to use MethodTimeTracker without setting CocoaPods, you can download
 
 * Measure a single method 
 ```javascript
-#import "NSObject+MethodTimeTracker.h"
-
 - (instancetype)init {
   ...
   
@@ -47,8 +45,6 @@ If you want to use MethodTimeTracker without setting CocoaPods, you can download
 
 * Measure multiple methods
 ```javascript
-#import "NSObject+MethodTimeTracker.h"
-
 - (instancetype)init {
   ...
   
@@ -62,8 +58,6 @@ If you want to use MethodTimeTracker without setting CocoaPods, you can download
 
 * Measure all methods in class
 ```javascript
-#import "NSObject+MethodTimeTracker.h"
-
 - (instancetype)init {
   ...
   
