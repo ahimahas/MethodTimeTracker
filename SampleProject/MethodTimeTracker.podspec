@@ -5,9 +5,9 @@ Pod::Spec.new do |s|
   s.homepage         = "https://github.com/ahimahas/MethodTimeTracker"
   s.license          = 'Restricted'
   s.author           = { "ahimahas" => "ahimahas@naver.com" }
-  s.source           = { :git => "https://github.com/ahimahas/MethodTimeTracker/tree/master/SampleProject", :tag => s.version }
+  s.source           = { :git => "https://github.com/ahimahas/MethodTimeTracker.git", :tag => s.version }
   s.platform     = :ios, '8.0'
   s.requires_arc = true
-  s.source_files = 'MSMethodTimeTracker/MSMethodTimeTracker/*'
+  s.source_files = 'SampleProject/MSMethodTimeTracker/MSMethodTimeTracker'
   s.module_name = 'MethodTimeTracker'
 end
