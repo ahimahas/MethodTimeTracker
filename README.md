@@ -25,8 +25,9 @@ The return value is a time in second.
 ```javascript
 #import "NSObject+MethodTimeTracker.h"
 
-//! in init method
 - (instancetype)init {
+  ...
+  
   //! with method name in String value
   [self trackingMethod:@"viewDidLoad"];
   
@@ -39,8 +40,9 @@ The return value is a time in second.
 ```javascript
 #import "NSObject+MethodTimeTracker.h"
 
-//! in init method
 - (instancetype)init {
+  ...
+  
   //! with method name in String value
   [self trackingMethods:@[@"viewDidLoad", @"privateMethod:"]];
   
@@ -53,8 +55,9 @@ The return value is a time in second.
 ```javascript
 #import "NSObject+MethodTimeTracker.h"
 
-//! in init method
 - (instancetype)init {
+  ...
+  
   //! measure all methods
   [self trackAllMethods];
 }
