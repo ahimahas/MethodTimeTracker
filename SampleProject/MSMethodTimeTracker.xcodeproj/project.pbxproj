@@ -142,17 +142,6 @@
 		581693511E56D3B100303990 /* MethodTimeTracker */ = {
 			isa = PBXGroup;
 			children = (
-				581693541E56D3B600303990 /* SwizzleMethod */,
-				581693521E56D3B600303990 /* NSObject+MethodTimeTracker.h */,
-				581693531E56D3B600303990 /* NSObject+MethodTimeTracker.m */,
-			);
-			name = MethodTimeTracker;
-			path = MSMethodTimeTracker;
-			sourceTree = "<group>";
-		};
-		581693541E56D3B600303990 /* SwizzleMethod */ = {
-			isa = PBXGroup;
-			children = (
 				581693551E56D3B600303990 /* MSSwizzleMethodStatics.h */,
 				581693561E56D3B600303990 /* NSInvocation+SwizzleHelper.h */,
 				581693571E56D3B600303990 /* NSInvocation+SwizzleHelper.m */,
@@ -164,8 +153,11 @@
 				5816935D1E56D3B600303990 /* NSObject+SwizzleMethods.m */,
 				5816935E1E56D3B600303990 /* MSOriginImpContainer.h */,
 				5816935F1E56D3B600303990 /* MSOriginImpContainer.m */,
+				581693521E56D3B600303990 /* NSObject+MethodTimeTracker.h */,
+				581693531E56D3B600303990 /* NSObject+MethodTimeTracker.m */,
 			);
-			path = SwizzleMethod;
+			name = MethodTimeTracker;
+			path = MSMethodTimeTracker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
