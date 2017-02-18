@@ -1,4 +1,4 @@
-# MethodTimeTracker
+# MethodTimeTracker 
 
 MethodTimeTracker is a module that can measure a time to spend in each method.
 
@@ -26,11 +26,11 @@ The return value is a time in second.
 #import "NSObject+MethodTimeTracker.h"
 
 //! in init method
-- (instanceType)init {
+- (instancetype)init {
   //! with method name in String value
   [self trackingMethod:@"viewDidLoad"];
   
-  //! with method name in Selector
+  //! or with method name in Selector
   [self trackingMethodWithSelector:@selector(viewDidLoad)];
 }
 ```
@@ -40,11 +40,11 @@ The return value is a time in second.
 #import "NSObject+MethodTimeTracker.h"
 
 //! in init method
-- (instanceType)init {
+- (instancetype)init {
   //! with method name in String value
   [self trackingMethods:@[@"viewDidLoad", @"privateMethod:"]];
   
-  //! with method name in Selector
+  //! or with method name in Selector
   [self trackingMethodWithSelectors:@selector(viewDidLoad), @selector(privateMethod:), nil];
 }
 ```
@@ -54,7 +54,7 @@ The return value is a time in second.
 #import "NSObject+MethodTimeTracker.h"
 
 //! in init method
-- (instanceType)init {
+- (instancetype)init {
   //! measure all methods
   [self trackAllMethods];
 }
