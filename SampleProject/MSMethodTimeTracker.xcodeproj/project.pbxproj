@@ -147,6 +147,7 @@
 				581693531E56D3B600303990 /* NSObject+MethodTimeTracker.m */,
 			);
 			name = MethodTimeTracker;
+			path = MSMethodTimeTracker;
 			sourceTree = "<group>";
 		};
 		581693541E56D3B600303990 /* SwizzleMethod */ = {
@@ -476,6 +477,7 @@
 				5816934C1E56D38300303990 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5816934D1E56D38300303990 /* Build configuration list for PBXNativeTarget "MSMethodTimeTrackerTests" */ = {
 			isa = XCConfigurationList;
@@ -484,6 +486,7 @@
 				5816934F1E56D38300303990 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
