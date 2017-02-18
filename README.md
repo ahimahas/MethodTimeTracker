@@ -23,7 +23,7 @@ Use the [CocoaPods](https://github.com/CocoaPods/CocoaPods)
 > pod 'MethodTimeTracker'
 
 and import header file
-> \#import <NSObject+MethodTimeTracker.h>
+> \#import \<NSObject+MethodTimeTracker.h\>
 
 If you want to use MethodTimeTracker without setting CocoaPods, you can download codes in MethodTimeTracker folder directly and add it to your project.
 
