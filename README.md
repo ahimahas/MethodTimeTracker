@@ -1,6 +1,6 @@
-# MethodTimeTracker 
-![CocoaPods](https://img.shields.io/cocoapods/v/MethodTimeTracker.svg)
-![Platform](https://img.shields.io/cocoapods/p/MethodTimeTracker.svg?style=flat)
+# MethodTimeTracker ![CocoaPods](https://img.shields.io/cocoapods/v/MethodTimeTracker.svg) ![Platform](https://img.shields.io/cocoapods/p/MethodTimeTracker.svg?style=flat)
+
+
 
 MethodTimeTracker is a module that can measure a time to spend in each method.
 
