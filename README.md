@@ -20,7 +20,10 @@ The return value is a time in second.
 
 # Installation
 Use the [CocoaPods](https://github.com/CocoaPods/CocoaPods)
-> pod ''
+> pod 'MethodTimeTracker'
+
+and import header file
+> \#import \<NSObject+MethodTimeTracker.h\>
 
 If you want to use MethodTimeTracker without setting CocoaPods, you can download codes in MethodTimeTracker folder directly and add it to your project.
 
