@@ -18,6 +18,12 @@ The return value is a time in second.
 
 ![sameple screenshot](/Resources/screenshot.png)
 
+# Installation
+Use the [CocoaPods](https://github.com/CocoaPods/CocoaPods)
+> pod ''
+
+If you want to use MethodTimeTracker without setting CocoaPods, you can download codes in MethodTimeTracker folder directly and add it to your project.
+
 
 # How to use
 
@@ -64,3 +70,5 @@ The return value is a time in second.
 ```
 
 
+# TO DO
+* convert into Swift code
