@@ -69,5 +69,3 @@ If you want to use MethodTimeTracker without setting CocoaPods, you can download
 ```
 
 
-# TO DO
-* convert into Swift code
