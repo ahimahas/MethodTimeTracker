@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "MethodTimeTracker"
-  s.version          = "1.0.3"
+  s.version          = "1.0.4"
   s.summary          = "Librariy to measure a time spend in each method"
   s.homepage         = "https://github.com/ahimahas/MethodTimeTracker"
   s.license          = 'Restricted'

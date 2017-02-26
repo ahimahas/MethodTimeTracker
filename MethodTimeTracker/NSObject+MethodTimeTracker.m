@@ -31,7 +31,7 @@
     [self anonymousSwizzlingWithSelecotors:selectors preProcudure:^(NSString *methodName, NSArray<id> *arguments) {
         startTime = CACurrentMediaTime();
     } postProcudure:^(NSString *methodName, NSArray<id> *arguments) {
-        NSLog(@"^\t \"%@\" takes time: %f", methodName, CACurrentMediaTime() - startTime);
+        NSLog(@"^ \t \"%@\" takes time: %f", methodName, CACurrentMediaTime() - startTime);
     }];
 }
 
@@ -45,7 +45,7 @@
     [self anonymousSwizzlingAllWithMethodNames:methods preProcudure:^(NSString *methodName, NSArray<id> *arguments) {
         startTime = CACurrentMediaTime();
     } postProcudure:^(NSString *methodName, NSArray<id> *arguments) {
-        NSLog(@"^\t \"%@\" takes time: %f", methodName, CACurrentMediaTime() - startTime);
+        NSLog(@"^ \t \"%@\" takes time: %f", methodName, CACurrentMediaTime() - startTime);
         
     }];
 }
@@ -59,7 +59,7 @@
     NSMutableArray <NSString *> *methodNames = [NSMutableArray new];
     for(int i = 0; i < outCount; i++) {
         [methodNames addObject:[NSString stringWithUTF8String:sel_getName(method_getName(methods[i]))]];
-        NSLog(@"^\t \"%@\"", [NSString stringWithUTF8String:sel_getName(method_getName(methods[i]))]);
+        NSLog(@"^ \t \"%@\"", [NSString stringWithUTF8String:sel_getName(method_getName(methods[i]))]);
     }
     NSLog(@"^ }");
     NSLog(@"^ Time to spend in each method:");
@@ -69,7 +69,7 @@
     [self anonymousSwizzlingAllWithMethodNames:methodNames preProcudure:^(NSString *methodName, NSArray<id> *arguments) {
         startTime = CACurrentMediaTime();
     } postProcudure:^(NSString *methodName, NSArray<id> *arguments) {
-        NSLog(@"^\t \"%@\" takes time: %f", methodName, CACurrentMediaTime() - startTime);
+        NSLog(@"^ \t \"%@\" takes time: %f", methodName, CACurrentMediaTime() - startTime);
     }];
 }
 
