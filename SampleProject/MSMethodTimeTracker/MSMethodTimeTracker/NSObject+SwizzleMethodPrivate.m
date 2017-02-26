@@ -46,6 +46,9 @@
     // post
     [self runPostProcedureAtKey:key withArguments:arguments];
     
+    // swizzle again if needed
+    [self swizzleMethodWithInvocation:invocation selector:selector];
+    
     return invocation;
 }
 
@@ -87,6 +90,12 @@
     }
     
     return arguments;
+}
+
+- (void)swizzleMethodWithInvocation:(NSInvocation *)invocation selector:(SEL)selector {
+    IMP swizzledImp = [invocation selectSwizzledMethod];
+    Method originMethod = class_getInstanceMethod([self class], selector);
+    method_setImplementation(originMethod, (IMP)swizzledImp);
 }
 
 - (void)runPreProcedureAtKey:(NSString *)key withArguments:(NSArray <id> *)arguments {
