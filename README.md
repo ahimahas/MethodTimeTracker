@@ -77,4 +77,5 @@ If you want to use MethodTimeTracker without setting CocoaPods, you can download
 ...
 ```
 
+![sameple screenshot](/Resources/screenshot2.png)
 
