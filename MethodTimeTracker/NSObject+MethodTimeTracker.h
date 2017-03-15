@@ -25,4 +25,10 @@
 //! Tracking all methods in class
 - (void)trackAllMethods;
 
+//! Tracking all methods in class and show measured value at the time
+- (void)trackAllMethodsShowingLogDynamically;
+
+//! Display measured time manually. It will shows up the result sorted by desc
+- (void)displayMethodTimeLogs;
+
 @end

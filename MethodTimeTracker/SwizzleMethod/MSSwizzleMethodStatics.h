@@ -7,6 +7,7 @@
 //
 
 //! category variable keys
+static NSString const *measuredMethodTimeValues = @"measuredMethodTimeValues";
 static NSString const *categoryKeySwizzledClasses = @"categoryKeySwizzledClasses";
 static NSString const *categoryKeyWasNilKey = @"categoryKeyWasNilKey";
 
