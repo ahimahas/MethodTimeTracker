@@ -70,7 +70,8 @@ If you want to use MethodTimeTracker without setting CocoaPods, you can download
   [self trackAllMethodsShowingLogDynamically];
 }
 
-//! at a point that you want to see logs
+//! at a point that you want to see logs.
+//! The result will be shown sorted by desc order
 ...
 [self displayMethodTimeLogs];
 ...
