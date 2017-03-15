@@ -65,13 +65,15 @@ If you want to use MethodTimeTracker without setting CocoaPods, you can download
   
   //! measure all methods
   [self trackAllMethods];
-  
-  //! show all measured log manually
-  [self displayMethodTimeLogs];
-  
+   
   //! measure all methods and shows result log dynamically
   [self trackAllMethodsShowingLogDynamically];
 }
+
+//! at a point that you want to see logs
+...
+[self displayMethodTimeLogs];
+...
 ```
 
 
