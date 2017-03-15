@@ -40,6 +40,9 @@ static NSString * const kCellIdentifier = @"AutoCompleteCell";
 }
 
 
+- (IBAction)didShowButtonTouch:(id)sender {
+    [self displayMethodTimeLogs];
+}
 
 #pragma mark - Unsupported Methods type
 
