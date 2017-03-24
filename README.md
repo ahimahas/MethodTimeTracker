@@ -7,7 +7,7 @@ MethodTimeTracker is a module that can measure a time to spend in each method.
 
 # When can be used
 
-If you felt that your application works a bit slow and you want to know where is the bottleneck in the code level, you are in right place. 
+If you felt that your application works a bit slow and you want to know where is the bottleneck in the code level, you are in the right place. 
 
 Method time tracker measures for each method that how much time they spend. 
 You can specify a single method you want to measure, or just check all methods in a class.
@@ -64,18 +64,18 @@ If you want to use MethodTimeTracker without setting CocoaPods, you can download
   ...
   
   //! measure all methods
-  [self trackAllMethods];
-   
-  //! measure all methods and shows result log dynamically
-  [self trackAllMethodsShowingLogDynamically];
+  [self measureAllMethodsTime];
 }
+```
 
+* Want to show all measured time with sorted
+```javascript
 //! at a point that you want to see logs.
 //! The result will be shown sorted by desc order
 ...
-[self displayMethodTimeLogs];
+[self showTrackedMethodTimeLogs];
 ...
 ```
 
-![sameple screenshot](/Resources/screenshot2.png)
+![sameple screenshot](/Resources/screenshot_showAll.png)
 
