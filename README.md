@@ -80,5 +80,5 @@ If you want to use MethodTimeTracker without setting CocoaPods, you can download
 ![sameple screenshot](/Resources/screenshot_showAll.png)
 
 
-# v1.2.1
+# Release history: 1.2.1
 - bug fix when swizzling dealloc method
