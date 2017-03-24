@@ -35,17 +35,26 @@
 @implementation NSObject (MethodTimeTracker)
 
 - (void)trackingMethodWithSelector:(SEL)selector {
-    [self trackingMethodWithSelectors:selector, NSSelectorFromString(@"dealloc"), nil];
+    [self trackingMethodWithSelectors:selector, nil];
 }
 
 - (void)trackingMethodWithSelectors:(SEL)selector, ... NS_REQUIRES_NIL_TERMINATION {
     va_list args;
     va_start(args, selector);
     NSMutableArray *selectors = [NSMutableArray new];
+    BOOL hasDeallocMethod = NO;
+    
     for (SEL arg = selector; arg != nil; arg = va_arg(args, SEL)) {
         [selectors addObject:[NSValue valueWithPointer:arg]];
+        if ([NSStringFromSelector(arg) isEqualToString:@"dealloc"]) {
+            hasDeallocMethod = YES;
+        }
     }
     va_end(args);
+    
+    if (hasDeallocMethod == NO) {
+        [selectors addObject:[NSValue valueWithPointer:NSSelectorFromString(@"dealloc")]];
+    }
     
     __block CFTimeInterval startTime;
 
@@ -57,11 +66,15 @@
 }
 
 - (void)trackingMethod:(NSString *)method {
-    [self trackingMethods:@[method, @"dealloc"]];
+    [self trackingMethods:@[method]];
 }
 
-- (void)trackingMethods:(NSArray <NSString *> *)methods {
+- (void)trackingMethods:(NSMutableArray <NSString *> *)methods {
     __block CFTimeInterval startTime;
+    
+    if ([methods containsObject:@"dealloc"] == NO) {
+        [methods addObject:@"dealloc"];
+    }
     
     [self anonymousSwizzlingAllWithMethodNames:methods preProcudure:^(NSString *methodName, NSArray<id> *arguments) {
         startTime = CACurrentMediaTime();
