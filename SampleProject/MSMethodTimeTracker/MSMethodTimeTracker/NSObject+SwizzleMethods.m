@@ -54,7 +54,18 @@
     
     [methodNames enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         NSString *originName = (NSString *)obj;
+        if ([originName isEqualToString:@"dealloc"]) {
+            Method originMethod = class_getInstanceMethod([self class], NSSelectorFromString(@"dealloc"));
+            Method swizzledMethod = class_getInstanceMethod([self class], NSSelectorFromString(@"swizzledDealloc"));
+            method_exchangeImplementations(originMethod, swizzledMethod);
+            return;
+        }
+        
         SEL originSelector = NSSelectorFromString(originName);
+        if ([originName isEqualToString:@".cxx_destruct"]) {
+            return;
+        }
+        
         if (originSelector == nil) {
             SWIZZLE_ERROR_LOG(@"there is no selector", originName);
             return;

@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "NSObject+MethodTimeTracker.h"
+#import "SecondViewController.h"
 
 static NSString * const kCellIdentifier = @"AutoCompleteCell";
 
@@ -22,7 +23,7 @@ static NSString * const kCellIdentifier = @"AutoCompleteCell";
     self = [super initWithCoder:aDecoder];
     if (self) {
         //! declare target methods in here
-        [self trackAllMethods];
+        [self measureAllMethodsTime];
     }
     
     return self;
@@ -41,7 +42,7 @@ static NSString * const kCellIdentifier = @"AutoCompleteCell";
 
 
 - (IBAction)didShowButtonTouch:(id)sender {
-    [self displayMethodTimeLogs];
+    [self showTrackedMethodTimeLogs];
 }
 
 #pragma mark - Unsupported Methods type
@@ -56,6 +57,13 @@ static NSString * const kCellIdentifier = @"AutoCompleteCell";
 //    return;
 //}
 
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    SecondViewController *vc = [SecondViewController new];
+    [vc.view setBackgroundColor:[UIColor whiteColor]];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 #pragma mark - UITableViewDataSource
 

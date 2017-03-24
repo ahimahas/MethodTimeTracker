@@ -38,4 +38,6 @@ char * methodReturnCharPointer(id self, SEL cmd, ...);
 //! Storage for origin implementation, preProcedure and postPrecedure at method name as a key.
 @property (atomic, strong) NSMutableDictionary<NSString *, MSOriginImpContainer *> *originImps;
 
+- (void)swizzledDealloc;
+
 @end

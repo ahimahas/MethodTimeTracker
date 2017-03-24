@@ -11,7 +11,6 @@
 #import "NSInvocation+SwizzleHelper.h"
 #import <objc/message.h>
 
-
 @implementation NSObject (SwizzleMethodPrivate)
 
 
@@ -33,9 +32,11 @@
     NSString *key = NSStringFromSelector(selector);
     NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:[self methodSignatureForSelector:selector]];
     NSArray *arguments = [self retrieveArgumentsFromArgs:args invocation:invocation];
-    
+
     // restore origin imp
-    [self restoreOriginImpWithSelector:selector];
+    if ([self restoreOriginImpWithSelector:selector] == NO) {
+        return invocation;
+    }
     
     // pre
     [self runPreProcedureAtKey:key withArguments:arguments];
@@ -52,18 +53,18 @@
     return invocation;
 }
 
-- (void)restoreOriginImpWithSelector:(SEL)selector {
+- (BOOL)restoreOriginImpWithSelector:(SEL)selector {
     NSString *key = NSStringFromSelector(selector);
     Method originMethod = class_getInstanceMethod([self class], selector);
-    
     MSOriginImpContainer *impContainer = self.originImps[key];
     IMP originImp = [impContainer.value pointerValue];
     if (originImp == nil) {
         SWIZZLE_ERROR_LOG(@"Storing origin imp fail", NSStringFromSelector(selector));
-        return;
+        return NO;
     }
     
     method_setImplementation(originMethod, originImp);
+    return YES;
 }
 
 - (void)callOriginImpForInvocation:(NSInvocation *)invocation selector:(SEL)selector withArguments:(NSArray *)arguments {
@@ -113,12 +114,36 @@
 }
 
 
+#pragma mark - Public Method for swizzling dealloc
+
+- (void)swizzledDealloc {
+    NSArray <NSString *> *allKeys = self.originImps.allKeys;
+    for (NSString *key in allKeys) {
+        [self restoreOriginImpWithSelector:NSSelectorFromString(key)];
+    }
+    [self.originImps removeAllObjects];
+    self.originImps = nil;
+    
+    Class aClass = [self class];
+    
+    [self swizzledDealloc];
+    
+    Method originMethod = class_getInstanceMethod(aClass, NSSelectorFromString(@"dealloc"));
+    Method swizzledMethod = class_getInstanceMethod(aClass, NSSelectorFromString(@"swizzledDealloc"));
+    method_exchangeImplementations(originMethod, swizzledMethod);
+}
+
+
 #pragma mark - #######################################################################################################################
 #pragma mark - Swizzled Method Forms
 
 void methodReturnVoid(id self, SEL cmd, ...) {
     va_list args;
     va_start(args, cmd);
+    
+    if ([NSStringFromSelector(cmd) isEqualToString:@".cxx_destruct"] || [NSStringFromSelector(cmd) isEqualToString:@"dealloc"]) {
+        return;
+    }
     
     [self processSwizzledLogicWithVaList:args selector:cmd];
 }
@@ -324,7 +349,6 @@ char * methodReturnCharPointer(id self, SEL cmd, ...) {
     [invocation getReturnValue:&rtnValue];
     return rtnValue;
 }
-
 
 @end
 

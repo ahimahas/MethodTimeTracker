@@ -20,6 +20,7 @@
 		581693631E56D3B600303990 /* NSObject+SwizzleMethodPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5816935B1E56D3B600303990 /* NSObject+SwizzleMethodPrivate.m */; };
 		581693641E56D3B600303990 /* NSObject+SwizzleMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 5816935D1E56D3B600303990 /* NSObject+SwizzleMethods.m */; };
 		581693651E56D3B600303990 /* MSOriginImpContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5816935F1E56D3B600303990 /* MSOriginImpContainer.m */; };
+		8F00E0D51E7A6D9900B785E4 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F00E0D41E7A6D9900B785E4 /* SecondViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		5816935D1E56D3B600303990 /* NSObject+SwizzleMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SwizzleMethods.m"; sourceTree = "<group>"; };
 		5816935E1E56D3B600303990 /* MSOriginImpContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSOriginImpContainer.h; sourceTree = "<group>"; };
 		5816935F1E56D3B600303990 /* MSOriginImpContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSOriginImpContainer.m; sourceTree = "<group>"; };
+		8F00E0D31E7A6D9900B785E4 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		8F00E0D41E7A6D9900B785E4 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				5816932F1E56D38300303990 /* AppDelegate.m */,
 				581693311E56D38300303990 /* ViewController.h */,
 				581693321E56D38300303990 /* ViewController.m */,
+				8F00E0D31E7A6D9900B785E4 /* SecondViewController.h */,
+				8F00E0D41E7A6D9900B785E4 /* SecondViewController.m */,
 				581693501E56D38B00303990 /* Resoureces */,
 				5816932B1E56D38300303990 /* Supporting Files */,
 			);
@@ -262,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F00E0D51E7A6D9900B785E4 /* SecondViewController.m in Sources */,
 				581693651E56D3B600303990 /* MSOriginImpContainer.m in Sources */,
 				581693331E56D38300303990 /* ViewController.m in Sources */,
 				581693621E56D3B600303990 /* NSNull+WasNil.m in Sources */,
@@ -352,7 +358,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -394,7 +400,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

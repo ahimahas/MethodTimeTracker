@@ -35,7 +35,7 @@
 @implementation NSObject (MethodTimeTracker)
 
 - (void)trackingMethodWithSelector:(SEL)selector {
-    [self trackingMethodWithSelectors:selector, nil];
+    [self trackingMethodWithSelectors:selector, NSSelectorFromString(@"dealloc"), nil];
 }
 
 - (void)trackingMethodWithSelectors:(SEL)selector, ... NS_REQUIRES_NIL_TERMINATION {
@@ -52,12 +52,12 @@
     [self anonymousSwizzlingWithSelecotors:selectors preProcudure:^(NSString *methodName, NSArray<id> *arguments) {
         startTime = CACurrentMediaTime();
     } postProcudure:^(NSString *methodName, NSArray<id> *arguments) {
-        NSLog(@"^ \t \"%@\" takes time: %f", methodName, CACurrentMediaTime() - startTime);
+        NSLog(@"^ \t %f sec spent in \"%@\"", CACurrentMediaTime() - startTime, methodName);
     }];
 }
 
 - (void)trackingMethod:(NSString *)method {
-    [self trackingMethods:@[method]];
+    [self trackingMethods:@[method, @"dealloc"]];
 }
 
 - (void)trackingMethods:(NSArray <NSString *> *)methods {
@@ -66,31 +66,32 @@
     [self anonymousSwizzlingAllWithMethodNames:methods preProcudure:^(NSString *methodName, NSArray<id> *arguments) {
         startTime = CACurrentMediaTime();
     } postProcudure:^(NSString *methodName, NSArray<id> *arguments) {
-        NSLog(@"^ \t \"%@\" takes time: %f", methodName, CACurrentMediaTime() - startTime);
-        
+        NSLog(@"^ \t %f sec spent in \"%@\"", CACurrentMediaTime() - startTime, methodName);
     }];
 }
 
-- (void)trackAllMethods {
-    [self trackAllMethodsShowingLogDynamically:NO];
-}
-
-- (void)trackAllMethodsShowingLogDynamically {
+- (void)measureAllMethodsTime {
     [self trackAllMethodsShowingLogDynamically:YES];
 }
 
 - (void)trackAllMethodsShowingLogDynamically:(BOOL)showLog {
     unsigned int outCount = 0;
     Method *methods = class_copyMethodList(object_getClass(self), &outCount);
-    NSLog(@"^ \"%@\" has %d methods ===============================", NSStringFromClass([self class]), outCount);
-    NSLog(@"^ {");
-    
     NSMutableArray <NSString *> *methodNames = [NSMutableArray new];
+    
     for(int i = 0; i < outCount; i++) {
-        [methodNames addObject:[NSString stringWithUTF8String:sel_getName(method_getName(methods[i]))]];
-        NSLog(@"^ \t \"%@\"", [NSString stringWithUTF8String:sel_getName(method_getName(methods[i]))]);
+        NSString *methodName = [NSString stringWithUTF8String:sel_getName(method_getName(methods[i]))];
+        if ([methodName isEqualToString:@".cxx_destruct"]) {
+            continue;
+        }
+        
+        [methodNames addObject:methodName];
     }
-    NSLog(@"^ }");
+    
+    //! add "dealloc" method if it doesn't have
+    if ([methodNames containsObject:@"dealloc"] == NO) {
+        [methodNames addObject:@"dealloc"];
+    }
     
     if (showLog) {
         NSLog(@"^ Time to spend in each method:");
@@ -100,19 +101,20 @@
     
     __block CFTimeInterval startTime;
     
+    __weak typeof(self) weakSelf = self;
     [self anonymousSwizzlingAllWithMethodNames:methodNames preProcudure:^(NSString *methodName, NSArray<id> *arguments) {
         startTime = CACurrentMediaTime();
     } postProcudure:^(NSString *methodName, NSArray<id> *arguments) {
         CFTimeInterval elapsedTime = CACurrentMediaTime() - startTime;
-        [self.measuredValues addObject:@{methodName: [NSNumber numberWithFloat:elapsedTime]}];
+        [weakSelf.measuredValues addObject:@{methodName: [NSNumber numberWithFloat:elapsedTime]}];
         
         if (showLog) {
-            NSLog(@"^ \t \"%@\" takes time: %f", methodName, elapsedTime);
+            NSLog(@"^ \t %f sec spent in \"%@\"", elapsedTime, methodName);
         }
     }];
 }
 
-- (void)displayMethodTimeLogs {
+- (void)showTrackedMethodTimeLogs {
     NSArray <NSDictionary *> *sortedValues = [self.measuredValues sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
         NSDictionary *obj1Dict = (NSDictionary *)obj1;
         NSDictionary *obj2Dict = (NSDictionary *)obj2;
@@ -129,10 +131,12 @@
         return (NSComparisonResult)NSOrderedSame;
     }];
 
-    NSLog(@"^ Time to spend in each method:");
+    NSLog(@"^ =====================");
+    NSLog(@"^ Time to spend in each method (sorted by desc):");
     for (NSDictionary *sortedValue in sortedValues) {
         NSLog(@"^ \t %f sec spent in \"%@\"", [sortedValue.allValues[0] floatValue], sortedValue.allKeys[0]);
     }
+    NSLog(@"^ =====================");
 }
 
 @end
